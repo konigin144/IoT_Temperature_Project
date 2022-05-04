@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hello there!</h1>
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<table style="width:800px">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Temperature [°C]</th>
+            <th>Temperature [°F]</th>
+        </tr>
+    </thead>
+    {% for measurement in db %}
+    <tbody>
+        <tr>
+            <td>{{ measurement[0] }}</td>
+            <td>{{ measurement[1] }}</td>
+            <td>{{ measurement[2] }}</td>
+            <td>{{ measurement[3] }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}

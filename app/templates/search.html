@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Search</h1>
+    <form action="" method="GET" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.startdate.label }}<br>
+            {{ form.startdate(size=32) }}<br>
+        </p>
+        <p>
+            {{ form.starttime.label }}<br>
+            {{ form.starttime(size=32) }}<br>
+        </p>
+        <p>
+            {{ form.enddate.label }}<br>
+            {{ form.enddate(size=32) }}<br>
+        </p>
+        <p>
+            {{ form.endtime.label }}<br>
+            {{ form.endtime(size=32) }}<br>
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
